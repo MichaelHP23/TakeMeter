@@ -1,8 +1,8 @@
-# TakeMeter Planning — r/anime Discourse Classifier
+# TakeMeter Planning — MyAnimeList Discourse Classifier
 
 ## Community Choice
 
-r/anime is one of the largest anime discussion communities on Reddit (~8M members). Discourse ranges from one-word episode reactions to multi-paragraph thematic analyses. The community itself actively distinguishes between low-effort reactions and substantive discussion — moderators enforce rules around "low-effort content" and users frequently call out "bad takes." This makes it a natural fit for a classification task: the quality distinctions already exist in the community's norms, they just aren't formalized.
+MyAnimeList (MAL) is one of the largest anime communities online, hosting both user reviews and forum discussion threads for individual shows. Discourse ranges from one-line episode reactions in forum threads to multi-paragraph structured reviews. The community itself actively distinguishes between low-effort reactions and substantive discussion — detailed reviews are explicitly separated from casual forum chatter, and users frequently call out "bad takes." This makes it a natural fit for a classification task: the quality distinctions already exist in the community's norms, they just aren't formalized.
 
 ## Label Taxonomy
 
@@ -54,18 +54,18 @@ Posts under ~20 words are often hard to classify because they lack enough signal
 
 ## Data Collection Plan
 
-**Source:** Reddit's r/anime — specifically episode discussion threads, recommendation threads, and standalone discussion posts. These contain the widest range of discourse quality.
+**Source:** MyAnimeList — specifically user reviews and episode/forum discussion threads. These contain the widest range of discourse quality.
 
-**Method:** Manual collection via browsing r/anime. Copy post text into a spreadsheet, assign labels per the definitions above. This keeps me close to the data and forces me to read every example carefully.
+**Method:** Manual collection via browsing MyAnimeList. Copy post text into a spreadsheet, assign labels per the definitions above. This keeps me close to the data and forces me to read every example carefully.
 
 **Target distribution:**
 - `analysis`: ~70 examples (35%)
 - `hot_take`: ~70 examples (35%)
 - `reaction`: ~60 examples (30%)
 
-Analysis posts are rarer in the wild (most r/anime comments are reactions or hot takes), so I'll specifically seek out "Writing" and "Discussion" flaired threads to find enough.
+Analysis posts are rarer in the wild (most forum comments are reactions or hot takes), so I'll specifically seek out full-length user reviews and episode discussion threads with detailed breakdowns to find enough.
 
-**If a label is underrepresented:** I'll search for analysis-heavy threads (WT! posts, essay-style discussion threads, rewatch threads where users write detailed episode breakdowns). If still short, I'll pull from r/TrueAnime or r/CharacterRant which skew more analytical.
+**If a label is underrepresented:** I'll search for analysis-heavy sources (long-form user reviews, essay-style discussion threads, finale/rewatch threads where users write detailed episode breakdowns) which skew more analytical.
 
 ## Evaluation Metrics
 

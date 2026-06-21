@@ -1,10 +1,10 @@
-# TakeMeter — r/anime Discourse Classifier
+# TakeMeter — MyAnimeList Discourse Classifier
 
-A fine-tuned text classifier that evaluates discourse quality in r/anime, distinguishing between **analysis**, **hot takes**, and **reactions**.
+A fine-tuned text classifier that evaluates discourse quality on MyAnimeList, distinguishing between **analysis**, **hot takes**, and **reactions**.
 
 ## Community Choice
 
-r/anime (~8M members) is one of Reddit's largest anime discussion communities. Discourse ranges from one-word episode reactions to multi-paragraph thematic breakdowns. The community already informally distinguishes between low-effort reactions and substantive discussion — moderators enforce "low-effort" content rules, and users frequently call out "bad takes." This project formalizes those distinctions into a classifier.
+MyAnimeList (MAL) is one of the largest anime communities online, hosting both user reviews and forum discussion threads for individual shows. Discourse ranges from one-line episode reactions in forum threads to multi-paragraph structured reviews. The community already informally distinguishes between low-effort reactions and substantive discussion — detailed reviews are explicitly separated from casual forum chatter, and users frequently call out "bad takes." This project formalizes those distinctions into a classifier.
 
 Why it's a good fit: the community is text-heavy, posts vary widely in quality, and the quality distinctions are grounded in real community norms rather than imposed externally.
 
@@ -33,7 +33,7 @@ An expression of feeling triggered by something just watched or read. Little to 
 
 ## Data Collection
 
-**Source:** Reddit r/anime — episode discussion threads, recommendation threads, and standalone discussion posts.
+**Source:** MyAnimeList — user reviews and episode/forum discussion threads.
 
 **Labeling process:** Fully manual. Posts were copied from MAL reviews, episode discussion threads, and discussion forums, then read in full and labeled by hand against the taxonomy definitions above — no pre-labeling or AI-assisted labeling was used for the dataset itself. Ambiguous posts were checked against the decision rules in `planning.md` before assigning a label.
 
@@ -81,7 +81,7 @@ An expression of feeling triggered by something just watched or read. Little to 
 
 **Prompt used:**
 ```
-You are classifying posts from r/anime, a large anime discussion community.
+You are classifying posts from MyAnimeList, a large anime discussion community.
 Assign each post to exactly one of the following categories.
 
 analysis: A structured argument with specific evidence — named episodes, scenes,
